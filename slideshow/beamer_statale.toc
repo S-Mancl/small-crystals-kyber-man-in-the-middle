@@ -1,5 +1,0 @@
-\beamer@sectionintoc {1}{Key Exchange and Quantum Security}{3}{0}{1}
-\beamer@sectionintoc {2}{CRYSTALS-Kyber}{8}{0}{2}
-\beamer@sectionintoc {3}{Baby-Kyber KEM}{18}{0}{3}
-\beamer@sectionintoc {4}{Personalization}{20}{0}{4}
-\beamer@sectionintoc {5}{Summary}{32}{0}{5}
