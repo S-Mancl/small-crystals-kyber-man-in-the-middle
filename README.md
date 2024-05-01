@@ -11,7 +11,7 @@ This is an implementation of a (reduced) version of the [Kyber Key Encapsulation
 
 It simulates a scenario where two players want to use AES but need to agree on common keys.
 
-![Kyber Key Encapsulation Mechanism](https://github.com/S-Mancl/small-crystals-kyber-man-in-the-middle/images/kem.png)
+![Kyber Key Encapsulation Mechanism](https://github.com/S-Mancl/small-crystals-kyber-man-in-the-middle/blob/main/images/kem.png)
 
 ### A demonstration of Man in the Middle attacks against the basic KEM protocol
 It also demonstrates how the basic Kyber.KEM protocol can be vulnerable to a Man in the Middle attack.
@@ -20,7 +20,7 @@ The screenshot below shows two things that are possible in this scenario:
 1. to understand the content of secrets messages
 2. to edit those messages
 
-![Demonstration of Man in the Middle](https://github.com/S-Mancl/small-crystals-kyber-man-in-the-middle/images/man-in-the-middle.png)
+![Demonstration of Man in the Middle](https://github.com/S-Mancl/small-crystals-kyber-man-in-the-middle/blob/main/images/man-in-the-middle.png)
 
 ## Where to learn more about it?
 
