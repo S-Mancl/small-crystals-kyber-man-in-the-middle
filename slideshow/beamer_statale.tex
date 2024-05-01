@@ -1,0 +1,96 @@
+% **************************************************************
+% Hi! Edit this file for your presentation!
+% **************************************************************
+
+% ==================///==================///==================///
+% ==================/// LATEX'S STUFF
+% ==================///==================///==================///
+
+\documentclass{beamer}
+\usepackage{amsfonts,amsmath,oldgerm,listings}
+\usetheme{_statale}
+\usefonttheme[onlymath]{serif}
+
+\lstset{frame=tlrb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  stepnumber=1,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\lstnewenvironment{code}[2][]{%
+  \lstset{%
+    numbers = left,
+    title   = #2,
+    #1,
+  }%
+}{}
+
+\lstdefinelanguage{pseudocode}{
+  keywords={for, to, do, while, and, or, if, then, else, returns, downto, error},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  morestring=[b]`,
+  sensitive=false,
+  mathescape=true
+}
+
+\newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
+\newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
+\titlebackground*{assets/background}
+
+% ==================///==================///==================///
+% ==================/// SPLASH PAGE
+% ==================///==================///==================///
+
+\title{Post-Quantum Cryptography Standards}
+\subtitle{Spiegazione e Implementazione del KEM CRYSTALS-Kyber}
+\course{Sicurezza dei Sistemi e delle Reti Informatiche}
+\author{\href{mailto:samuele.manclossi@studenti.unimi.it}{Samuele Manclossi}}
+\IDnumber{09882A}
+
+% ==================///==================///==================///
+% ==================/// START PRESENTATION
+% ==================///==================///==================///
+
+\begin{document}
+\maketitle
+
+\footlinecolor{maincolor}
+\begin{frame}
+
+\begin{center}\textit{
+    \input{./sections/abstract}
+}\end{center}
+\end{frame}
+
+% ==================///==================///==================///
+% ==================/// BODY'S PRESENTATION
+% ==================///==================///==================///
+
+\input{sections/introduction}
+
+\input{sections/personalization}
+
+\input{chapters/special_slides}
+
+\input{sections/summary}
+
+% ==================///==================///==================///
+% ==================/// END PRESENTATION
+% ==================///==================///==================///
+
+\backmatter
+\end{document}

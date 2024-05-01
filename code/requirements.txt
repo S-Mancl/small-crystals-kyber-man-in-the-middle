@@ -1,0 +1,4 @@
+sympy
+libxdo
+keyboard
+

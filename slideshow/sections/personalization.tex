@@ -1,0 +1,129 @@
+\section{Personalization}
+
+\footlinecolor{stataleyellow}
+\begin{frame}[fragile]{Changing Slide Style}
+\begin{itemize}
+    \item You can select the white or \textit{maincolor} \textbf{slide style} \emph{in the preamble} with \verb|\themecolor{white}| (default) or \verb|\themecolor{main}|
+          \begin{itemize}
+              \item You should \emph{not} change these within the document: Beamer does  not like it
+              \item If you \emph{really} must, you may have to add 
+              \verb|\usebeamercolor[fg]{normal text}| in the slide
+          \end{itemize}
+    \item You can change the \textbf{footline colour} with 
+    \verb|\footlinecolor{color}|
+          \begin{itemize}
+              \item Place the command \emph{before} a new \verb|frame|
+              \item There are four ``official'' colors: 
+              \testcolor{maincolor}, \testcolor{stataleyellow}, 
+              \testcolor{statalegreen}, \testcolor{stataledarkgreen}
+              \item Default is no footline; you can restore it with 
+              \verb|\footlinecolor{}|
+              \item Others may work, but no guarantees!
+              \item Should \emph{not} be used with the \verb|maincolor| theme!
+          \end{itemize}
+\end{itemize}
+\end{frame}
+
+%=======================================================================
+
+\begin{frame}[fragile]{Blocks}
+\begin{columns} % adding [onlytextwidth] the left margins will be set correctly
+\begin{column}{0.3\textwidth}
+\begin{block}{Standard Blocks}
+These have a color coordinated with the footline (and grey in the blue theme)
+\begin{verbatim}
+\begin{block}{title}
+content...
+\end{block}
+\end{verbatim}
+\end{block}
+\end{column}
+\begin{column}{0.7\textwidth}
+\begin{colorblock}[black]{statalelightgreen}{Colour Blocks}
+Similar to the ones on the left, but you pick the colour. Text will be white by default, but you may set it with an optional argument.
+\small
+\begin{verbatim}
+\begin{colorblock}[black]{statalelightgreen}{title}
+content...
+\end{colorblock}
+\end{verbatim}
+\end{colorblock}
+The ``official'' colours of colour blocks are: \testcolor{statalelilla}, 
+\testcolor{maincolor}, \testcolor{stataledarkgreen}, and 
+\testcolor{stataleyellow}.
+\end{column}
+\end{columns}
+\end{frame}
+
+%=======================================================================
+
+\footlinecolor{}
+\begin{frame}[fragile]{Using Colours}
+\begin{itemize}[<alert@2>]
+  \item You can use colours with the
+        \verb|\textcolor{<color name>}{text}| command
+  \item The colours are defined in the \texttt{statale\_colors} package:
+  \begin{itemize}
+  \item Primary colours: \testcolor{maincolor} and its sidekick 
+  \testcolor{statalegrey}
+  \item Three shades of green: \testcolor{statalelightgreen}, 
+  \testcolor{statalegreen}, \testcolor{stataledarkgreen}
+  \item Additional colours: \testcolor{stataleyellow}, \testcolor{statalered}, 
+        \testcolor{statalelilla}
+  \end{itemize}
+  \item Do \emph{not} abuse colours: \verb|\emph{}| is usually enough
+  \item Use \verb|\alert{}| to bring the \alert<2->{focus} somewhere
+  \item <2- | alert@2> If you highlight too much, you don't highlight at all!
+\end{itemize}
+\end{frame}
+
+%=======================================================================
+
+\begin{frame}[fragile]{Adding images}
+\begin{columns}  % adding [onlytextwidth] the left margins will be set correctly
+\begin{column}{0.7\textwidth}
+Adding images works like in normal \LaTeX:
+\begin{block}{Code for Adding Images}
+\begin{verbatim}
+\usepackage{graphicx}
+% ...
+\includegraphics[width=\textwidth]
+{assets/logo_RGB}
+\end{verbatim}
+\end{block}
+\end{column}
+\begin{column}{0.3\textwidth}
+\includegraphics[width=\textwidth]
+{assets/logo_RGB}
+\end{column}
+\end{columns}
+\end{frame}
+
+%=======================================================================
+
+\begin{frame}[fragile]{Splitting in Columns}
+Splitting the page is easy and common; typically, one side has a picture and the other text:
+\begin{columns}  % adding [onlytextwidth] the left margins will be set correctly
+\begin{column}{0.6\textwidth}
+This is the first column
+\end{column}
+\begin{column}{0.3\textwidth}
+And this the second
+\end{column}
+\end{columns}
+\begin{block}{Column Code}
+\begin{verbatim}
+\begin{columns} 
+    % adding [onlytextwidth] the left margins will be set correctly
+    \begin{column}{0.6\textwidth}
+        This is the first column
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        And this the second
+    \end{column}
+    % There could be more!
+\end{columns}
+\end{verbatim}
+\end{block}
+
+\end{frame}

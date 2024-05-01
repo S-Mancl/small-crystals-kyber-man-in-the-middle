@@ -1,0 +1,24 @@
+ci sono vari tipi di messaggio nel protocollo bk-sm:
+
+il primo byte identifica il tipo di messaggio:
+
+|type| data |
+0    7      ...
+
+type:
+0. caro server, voglio i miei messaggi
+1. caro server, eccoti un mio messaggio da aggiungere
+2. caro server, qualcuno si vuole connettere a me?
+3. caro server, se nessuno si vuole connettere a me allora voglio connettermi io
+
+
+
+ecco la mia chiave pubblica
+|00000000|t come stringa di byte polinomiale PIPE rho |
+1. grazie per la chiave pubblica, ecco il messaggio incapsulato
+|00000001|u come stringa di byte polinomiale PIPE v come stringa di byte polinomiale|
+2. grazie per il messaggio incapsulato
+
+3. caro server, aggiungi un messaggio
+4. caro server, voglio i miei messaggi
+

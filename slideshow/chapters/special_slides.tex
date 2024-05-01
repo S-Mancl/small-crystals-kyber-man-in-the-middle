@@ -1,0 +1,70 @@
+\begin{chapter}[assets/background_negative]{statalelilla}{Special Slides}
+\begin{itemize}
+    \item Chapter slides
+    \item Side-picture slides
+\end{itemize}
+\end{chapter}
+
+%=======================================================================
+
+\footlinecolor{statalelilla}
+\begin{frame}[fragile]{Chapter slides}
+\begin{itemize}
+    \item Similar to \verb|frame|s, but with a few more options
+    \item Opened with \verb|\begin{chapter}[<image>]{<color>}{<title>}|
+    \item Image is optional, colour and title are mandatory
+    \item There are seven ``official'' colours: \testcolor{maincolor}, \testcolor{stataledarkgreen}, \testcolor{statalegreen}, \testcolor{statalelightgreen}, \testcolor{statalered}, \testcolor{stataleyellow}, \testcolor{statalelilla}.
+    \begin{itemize}
+        \item Strangely enough, these are \emph{more} than the official colours for the footline.
+        \item It may still be a nice touch to change the footline of following  slides to the same color of a chapter slide. Your choice.
+    \end{itemize}
+    \item Otherwise, \verb|chapter| behaves just like \verb|frame|.
+\end{itemize}
+\end{frame}
+
+%=======================================================================
+
+\begin{sidepic}{assets/background_alternative}{Side-Picture Slides}
+\begin{itemize}
+    \item Opened with \texttt{$\backslash$begin\{sidepic\}\{<image>\}\{<title>\}}
+    \item Otherwise, \texttt{sidepic} works just like \texttt{frame}
+\end{itemize}
+\end{sidepic}
+
+%=======================================================================
+
+\begin{frame}
+\frametitle{Fonts}
+\begin{itemize}
+    \item The paramount task of fonts is being readable
+    \item There are good ones...
+      \begin{itemize}
+          \item {\textrm{Use serif fonts only with high-definition projectors}}
+          \item {\textsf{Use sans-serif fonts otherwise (or if you simply prefer them)}}
+      \end{itemize}
+    \item ... and not so good ones:
+    \begin{itemize}
+        \item {\texttt{Never use monospace for normal text}}
+        \item {\frakfamily Gothic, calligraphic or weird fonts: should always: be avoided}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%=======================================================================
+
+\begin{frame}[fragile]{Look}
+\begin{itemize}
+    \item To insert a final slide with the title and final thanks, use \verb|\backmatter|.
+    \begin{itemize}
+        \item The title also appears in footlines along with the author name, you can change this text with \verb|\footlinepayoff|
+        \item You can remove the title from the final slide with \verb|\backmatter[notitle]|
+    \end{itemize}
+    \item The aspect ratio defaults to 16:9, and you should not change it to 4:3 for old projectors as it is inherently impossible to perfectly convert a 16:9 presentation to 4:3 one; spacings \emph{will} break
+    \begin{itemize}    
+        \item The \texttt{aspectratio} argument to the \texttt{beamer} class is overridden by the SINTEF theme
+        \item If you \emph{really} know what you are doing, check the package code and look for the \texttt{geometry} class.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\footlinecolor{}

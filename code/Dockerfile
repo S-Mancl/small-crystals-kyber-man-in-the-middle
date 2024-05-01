@@ -1,0 +1,36 @@
+# start by pulling the python image
+FROM python:3.8-slim-buster
+
+# copy the requirements file into the image
+COPY ./requirements.txt /app/requirements.txt
+
+# switch working directory
+WORKDIR /app
+
+# for the keyboard
+RUN apt-get update 
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kbd
+
+#upgrade pip and install scheduler
+RUN /usr/local/bin/python -m pip install --upgrade pip
+#RUN apt-get install gcc libpq-dev -y
+#RUN apt-get install python-dev  python-pip -y
+#RUN apt-get install python3-dev python3-pip python3-venv python3-wheel -y
+#RUN pip install wheel setuptools --upgrade
+#RUN pip3 install wheel setuptools --upgrade
+#RUN python -m pip install wheel setuptools --upgrade
+#RUN python3 -m pip install wheel setuptools --upgrade
+RUN pip install pycryptodome
+
+# install the dependencies and packages in the requirements file
+RUN pip install sympy
+RUN pip install keyboard
+#RUN pip install pycrypto
+
+# copy every content from the local file to the image
+COPY smallkyber.py lightknife_client.py getch.py AESCipher.py /app/
+
+# configure the container to run in an executed manner
+ENTRYPOINT ["bash"]
+
+#CMD ["python3","bot.py"]
