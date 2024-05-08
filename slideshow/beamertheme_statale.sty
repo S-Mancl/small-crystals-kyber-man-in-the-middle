@@ -24,7 +24,13 @@
 
 \ProvidesPackage{beamertheme_statale}[2023/11/01]
 
+\RequirePackage{csquotes}
+\RequirePackage[backend=bibtex,style=alphabetic]{biblatex}
 \RequirePackage{etoolbox}
+\addbibresource{bibliography.bib}
+\BiblatexSplitbibDefernumbersWarningOff
+
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
 \RequirePackage{tikz}
 
 % Force 16:9 aspect ratio
@@ -306,3 +312,7 @@
 
 % avoid numbering of frames that are breaked into multiply slides
 \setbeamertemplate{frametitle continuation}{}
+
+
+
+
