@@ -92,7 +92,7 @@ $return (pk:=(\boldsymbol{t},\rho),sk:=\boldsymbol{s})$
     \framesubtitle{Parte A}
     \begin{minipage}{0.45\linewidth}
         %\begin{lstlisting}
-        \begin{lstlisting}[title=Kyber.CPA.Enc(pk\,m):,mathescape=true]
+        \begin{lstlisting}[title={Kyber.CPA.Enc(pk,m):},mathescape=true]
 $r\leftarrow\{0,1\}^{256}$
 $\boldsymbol{t}:=\text{Decompress}_q(\boldsymbol{t},d_t)$
 $\boldsymbol{A}\sim R^{k\times k}_q:=\text{Sam}(\rho)$
@@ -115,7 +115,7 @@ $(\boldsymbol{r},\boldsymbol{e_1},e_2)\sim\beta^k_\eta\times\beta^k_\eta\times\b
     \framesubtitle{Parte B}
     \begin{minipage}{0.45\linewidth}
         %\begin{lstlisting}
-        \begin{lstlisting}[title=Kyber.CPA.Enc(pk\,m):,mathescape=true,firstnumber=4]
+        \begin{lstlisting}[title={Kyber.CPA.Enc(pk,m):},mathescape=true,firstnumber=4]
 ...
 $\boldsymbol{u}:=\text{Compress}_q(\boldsymbol{A}^T\boldsymbol{r}+\boldsymbol{e_1},d_u)$
 $v:=\text{Compress}_q(\boldsymbol{t}^T\boldsymbol{r}+e_2+\left\lceil\frac{q}{2}\right\rfloor\cdot m,d_v)$
@@ -137,7 +137,7 @@ $\text{return }c:=(\boldsymbol{u},v)$
 
     \begin{minipage}{0.35\linewidth}
         %\begin{lstlisting}
-        \begin{lstlisting}[title=Kyber.CPA.Dec(sk\,c):,mathescape=true]
+        \begin{lstlisting}[title={Kyber.CPA.Dec(sk,c):},mathescape=true]
 $\boldsymbol{u}:=\text{Decompress}_q(\boldsymbol{u},d_u)$
 $v:=\text{Decompress}_q(v,d_v)$
 $\text{return Compress}_q(v-\boldsymbol{s}^T\boldsymbol{u},1)$
