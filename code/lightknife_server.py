@@ -53,7 +53,7 @@ def prepare_bytes(from_name:str):
     msg = b''
     for item in messagesFor[from_name]:
         msg += item
-        msg += b'|'
+        msg += b'|||||'
         oldMessages[from_name].append(msg)
     messagesFor[from_name] = []
     if len(msg)==0:
@@ -127,7 +127,7 @@ def setUpEvil():
     for item in t:
         msg += str(item).encode() + b','
     msg = msg[:-1]
-    msg += b'|'+rho.to_bytes(32,'big')
+    msg += b'|||||'+rho.to_bytes(32,'big')
     t_rho = msg
 
 def edit(plaintext:str):
@@ -168,7 +168,7 @@ def evalEvil(data:bytes,from_addr):
             # TODO get u,v
             data = data[1:]
             u_and_v = data.decode()
-            tmp_u,v = u_and_v.split("|")
+            tmp_u,v = u_and_v.split("|||||")
             v = parse_expr(v)
             u = [
                     parse_expr(item) for item in tmp_u.split(",") 

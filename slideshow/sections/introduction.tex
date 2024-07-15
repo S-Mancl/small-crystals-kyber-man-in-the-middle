@@ -5,7 +5,7 @@
 \framesubtitle{Come siamo arrivati qui}
 
 \begin{itemize}%[<+->]
-    \item 1994: Peter Shor pubblica un algoritmo (\cite{shor,shor2}) in grado di rompere RSA e Diffie-Hellman fattorizzando in primi in un modo impensabile per i computer classici
+    \item 1994: Peter Shor pubblica un algoritmo (\cite{shor,shor2}) in grado di rompere RSA e altri schemi fattorizzando in primi in un modo impensabile per i computer classici
     \item 2005: Oded Regev pubblica una ricerca (\cite{regev}) sul problema del Learning With Errors
     \item 2016: Il NIST richiede nuovi standard in grado di resistere all'avvento del quantum computing
     \item 2017: Viene proposto CRYSTALS-Kyber (KEM) (\cite{ufficiale})
@@ -156,7 +156,7 @@ $\text{return Compress}_q(v-\boldsymbol{s}^T\boldsymbol{u},1)$
     Noi siamo abituati a trasmettere i messaggi nella forma di numeri, tuttavia qui lavoriamo con i polinomi. Come è possibile questo?
 
     \begin{block}{I numeri sono polinomi}
-        Ci basta effettuare una semplice conversione prendendo il messaggio in binario e associando ad ogni bit un esponente, ad esempio $11_{10}=1101_2=x^3+x+1$ (\cite{kyber17,babykyber}).
+        Ci basta effettuare una semplice conversione prendendo il messaggio in binario e associando ad ogni bit un esponente, ad esempio $11_{10}=1011_2=x^3+x+1$ (\cite{kyber17,babykyber}).
     \end{block}
 
     \begin{colorblock}{statalegreen}{Amplificazione del polinomio}
@@ -185,7 +185,7 @@ $\text{return Compress}_q(v-\boldsymbol{s}^T\boldsymbol{u},1)$
 \begin{minipage}{0.45\linewidth}
         %\begin{lstlisting}
     \begin{lstlisting}[title=Kyber.Encaps(pk):,mathescape=true]
-$m'\leftarrow\{0,1\}^{256}$
+$m\leftarrow\{0,1\}^{256}$
 $(\hat{K},r):=G(H(pk),m)$
 $(\boldsymbol{u},v):=\text{Kyber.CPA.Enc}((\boldsymbol{t},\rho),m;r)$
 $c:=(\boldsymbol{u},v)$

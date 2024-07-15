@@ -195,7 +195,7 @@ def connect():
         for item in t:
             msg += str(item).encode() + b','
         msg = msg[:-1]
-        msg += b'|'+rho.to_bytes(32,'big')
+        msg += b'|||||'+rho.to_bytes(32,'big')
         # END transform t and rho
         tipo = int(4).to_bytes(1,'big')
         data = sendbytes(tipo+msg)
@@ -212,7 +212,7 @@ def connect():
                 break
         # get u,v from message
         u_and_v = data.decode()
-        tmp_u,v = u_and_v.split("|")
+        tmp_u,v = u_and_v.split("|||||")
         v = parse_expr(v)
         u = [
                 parse_expr(item) for item in tmp_u.split(",") 
@@ -237,7 +237,7 @@ def connect():
                 logSuccess("Keys are available")
                 break
         # get t and rho from the comm
-        [t_temp,rho] = data.split(b'|')
+        [t_temp,rho] = data.split(b'|||||')
         t_temp = t_temp.decode()
         rho = int.from_bytes(rho,'big')
         t = [
@@ -251,7 +251,7 @@ def connect():
         for item in u:
             msg += str(item).encode() + b','
         msg = msg[:-1]
-        msg += b'|'
+        msg += b'|||||'
         msg += str(v).encode()
         # END transform encapsulated to bytes
         tipo = int(5).to_bytes(1,'big')
@@ -299,7 +299,7 @@ def getMessages():
             if(len(tmpdata)<1024):
                 break
         if len(data) > 0 and not b"NOMESSAGES" in data:
-            for msg in [status["AES"].decrypt(i) for i in data.split(b"|")]:
+            for msg in [status["AES"].decrypt(i) for i in data.split(b"|||||")]:
                 status["messages"].append(
                     "["+findOther(socket.gethostname())+"] -> ["+socket.gethostname()+"]: "+msg
                 )
